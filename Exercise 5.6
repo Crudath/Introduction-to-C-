@@ -1,0 +1,74 @@
+// CHAPTER 5: EXERCISE 5.6 (Miles to Kilometers table & Kilometers to Miles)
+
+// Create a conversion table as seen below:
+
+//   Miles   Kilometers   |   Kilometers   Miles
+//   1       1.609        |   20           12.430
+//   2       3.218        |   25           15.538
+//   3       4.827        |   30           18.645
+//   4       6.436        |   35           21.753
+//   5       8.045        |   40           24.860
+//   6       9.654        |   45           27.968
+//   7       11.263       |   50           31.075
+//   8       12.872       |   55           34.183
+//   9       14.481       |   60           37.290
+//   10      16.090       |   65           40.397
+
+
+// -----------------------------------------------------------------------------------
+
+
+#include <iostream>
+#include <iomanip>
+
+int main() {
+
+    //Declare variables
+    float mi = 0.6215, km = 1.609;
+    int m, k;
+
+    //Display Table Header
+    std::cout << "Miles";
+    std::cout << std::setfill(' ') << std::setw(3) << " " << "Kilometers";
+    std::cout << std::setfill(' ') << std::setw(3) << " " << "|";
+    std::cout << std::setfill(' ') << std::setw(3) << " " << "Kilometers";
+    std::cout << std::setfill(' ') << std::setw(3) << " " << "Miles";
+    std::cout << std::endl;
+
+    //Create Loop that displays progressing conversion from mi-km & km-mi
+    for (m = 1; m <= k;) {
+        for (k = 20; k <= 65; k += 5) {
+            if (m <= 6) {
+            std::cout << m;
+            std::cout << std::setw(7) << " "; 
+            std::cout << std::fixed << std::setprecision(3) << m * km;
+            std::cout << std::setw(8) << " " << "|";
+            std::cout << std::setw(3) << " " << k;
+            std::cout << std::setw(11) << " " << k * mi;
+            std::cout << std::endl;
+            m++;
+            }
+            else if (m >= 7 && m <= 9) {
+            std::cout << m;
+            std::cout << std::setw(7) << " "; 
+            std::cout << std::fixed << std::setprecision(3) << m * km;
+            std::cout << std::setw(7) << " " << "|";
+            std::cout << std::setw(3) << " " << k;
+            std::cout << std::setw(11) << " " << k * mi;
+            std::cout << std::endl;
+            m++;
+            }
+            else if (m == 10) {
+            std::cout << m;
+            std::cout << std::setw(6) << " "; 
+            std::cout << std::fixed << std::setprecision(3) << m * km;
+            std::cout << std::setw(7) << " " << "|";
+            std::cout << std::setw(3) << " " << k;
+            std::cout << std::setw(11) << " " << k * mi;
+            std::cout << std::endl;
+            m++;
+            return 0;
+            }
+        }
+    }
+}
